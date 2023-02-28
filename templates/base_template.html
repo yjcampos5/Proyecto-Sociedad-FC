@@ -1,0 +1,62 @@
+
+<!--
+
+=========================================================
+* Pixel Free Bootstrap 5 UI Kit
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    {% block title %}{% endblock %}
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signUp.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <header>
+      <div class="interior">
+          <a href="" class="logo"><img src="{{ url_for('static', filename='/img/escudo.jpg') }}" alt="logo"></a>
+          <nav class="navegacion">
+              <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/signUp">Registrate</a></li>
+                  <li><a href="/login">Iniciar sesión</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+  
+  <main>
+      {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">
+    <div class="contenFooter">
+        <ul>
+            <li>@facebook</li>
+            <li>@instagram</li>
+            <li>@twitter</li>
+        </ul>
+    </div>
+    
+  </footer>
+</body>
+</html>

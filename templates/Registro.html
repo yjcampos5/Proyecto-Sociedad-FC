@@ -1,0 +1,118 @@
+{% extends "base_template.html" %}
+
+{% block title %}Registrate{% endblock %}
+  
+{% block content %}
+  <main>
+      <form action="" class="formSignUp" method="post">
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages%}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+        {{ form.hidden_tag() }}
+        <div class="contentFormSignUp">
+          <div class="contentTitleSignUp">
+            <h1 class="titleSignUp">Registrate</h1>
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Tipodoc.label }}
+            <select  id="Tipodoc" name="Tipodoc" class="formSelectSignUp" >
+              <option value="RC">Registro civil</option>
+              <option value="TI">Tarjeta de identidad</option>
+              <option value="CC">Cédula de ciudadanía</option>
+              <option value="CE">Cédula de extrajería</option>
+            </select>
+            {% for error in form.Tipodoc.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Documento.label }}
+            <input type="text" id="Documento" name="Documento" class="formInputSignUp" placeholder="Numero documento">
+            {% for error in form.Documento.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Nombres.label }}
+            <input type="text" id="Nombres" name="Nombres" class="formInputSignUp" placeholder="Nombres">
+            {% for error in form.Nombres.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Apellidos.label }}
+            <input type="text" id="Apellidos" name="Apellidos"class="formInputSignUp" placeholder="Apellidos">
+            {% for error in form.Apellidos.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Nacimiento.label }}
+            <input type="date" id="Nacimiento" name="Nacimiento" class="formInputSignUp">
+            {% for error in form.Nacimiento.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Genero.label }}
+            <div class="radioSignUp">
+              <input type="radio" name="Genero" id="option1" value="M"> Masculino </input><br>
+              <input type="radio" name="Genero" id="option2" value="F"> Femenino </input><br>
+              {% for error in form.Genero.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Email.label }}
+            <input type="email" id="Email" name="Email" class="formInputSignUp" placeholder="Email">
+            {% for error in form.Email.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Telefono.label }}
+            <input type="text" id="Telefono" name="Telefono" class="formInputSignUp" placeholder="Numero celular">
+            {% for error in form.Telefono.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Direccion.label }}
+            <input type="text" id="Direccion" name="Direccion" class="formInputSignUp" placeholder="Dirección">
+            {% for error in form.Direccion.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Rol.label }}
+            <div class="radioSignUp">
+              <input type="radio" name="Rol" id="option1" value="estudiante"> Estudiante </input><br>
+              <input type="radio" name="Rol" id="option2" value="entrenador"> Entrenador </input><br>
+              <input type="radio" name="Rol" id="option2" value="acudiente"> Acudiente </input><br>
+              {% for error in form.Rol.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="formGroupSignUp">
+            {{ form.Contraseña.label }}
+            <input type="password" id="Contraseña" name="Contraseña" class="formInputSignUp" placeholder="Contraseña">
+            {% for error in form.Contraseña.errors %}
+                <span style="color: red;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          <div class="formGroupSignUp">
+            <button class="buttonSignUp" type="submit">Registrate</button>
+          </div>
+        </div>
+      </form>
+  </main>
+
+{% endblock %}

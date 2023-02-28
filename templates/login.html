@@ -1,0 +1,44 @@
+{% extends "base_template.html" %}
+
+{% block title %}Iniciar sesión{% endblock %}
+  
+{% block content %}
+<main>
+    <form action="" class="formLogin" method="post">
+      {% with messages=get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages%}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {{ form.hidden_tag() }}
+      <div class="contentFormLogin">
+        <div class="contentTitleformLogin">
+          <h1 class="titleformLogin">Inicio de sesión</h1>
+        </div>
+        <div class="formGroupformLogin">
+          {{ form.Documento.label }}
+          <input type="text" id="Documento" name="Documento" class="formInputLogin" placeholder="Numero documento">
+          {% for error in form.Documento.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="formGroupformLogin">
+          {{ form.Contraseña.label }}
+          <input type="password" id="Contraseña" name="Contraseña" class="formInputLogin" placeholder="Contraseña">
+          {% for error in form.Contraseña.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="formGroupLogin">
+          <button class="buttonformLogin" type="submit">Iniciar sesión</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+
+<!--
+
+=========================================================
+* Pixel Free Bootstrap 5 UI Kit
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+
+{% extends "base_template.html" %}
+
+{% block title %}Registrate{% endblock %}
+  
+{% block content %}
+<main>
+    <form class="formSignUp">
+      <div class="contentFormSignUp">
+        <div class="contentTitleSignUp">
+          <h1 class="titleSignUp">Registarte</h1>
+        </div>
+        <div class="formGroupSignUp">
+          <label for="typeDoc" class="formLabelSignUp">Tipo documento</label>
+          <select name="selectDoc" class="formSelectSignUp">
+            <option value="">Registro civil</option>
+            <option value="">Tarjeta de identidad</option>
+            <option value="">Cédula de ciudadanía</option>
+            <option value="">Cédula de extrajería</option>
+          </select>
+        </div>
+        <div class="formGroupSignUp">
+          <label for="numberDoc" class="formLabelSignUp">Numero Documento</label>
+          <input type="text" class="formInputSignUp" placeholder="Numero documento">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="name" class="formLabelSignUp">Nombres</label>
+          <input type="text" class="formInputSignUp" placeholder="Nombres">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="lastName" class="formLabelSignUp">Apellidos</label>
+          <input type="text" class="formInputSignUp" placeholder="Apellidos">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="birthdate" class="formLabelSignUp">Fecha de nacimiento</label>
+          <input type="date" class="formInputSignUp">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="sex" class="formLabelSignUp">Sexo</label>
+          <div class="radioSignUp">
+            <input type="radio" name="sex" id="masculino" class="formRdioSignUp">
+            <label for="masculino">Masculino</label>
+          </div>
+          <div class="radioSignUp">
+            <input type="radio" name="sex" id="femenino" class="formRdioSignUp">
+            <label for="femenino">Femenino</label>
+          </div>
+        </div>
+        <div class="formGroupSignUp">
+          <label for="email" class="formLabelSignUp">Correo electrónico</label>
+          <input type="email" class="formInputSignUp" placeholder="Email">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="numberPhone" class="formLabelSignUp">Numero celular</label>
+          <input type="text" class="formInputSignUp" placeholder="Numero celular">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="address" class="formLabelSignUp">Dirección</label>
+          <input type="text" class="formInputSignUp" placeholder="Dirección">
+        </div>
+        <div class="formGroupSignUp">
+          <label for="password" class="formLabelSignUp">Contraseña</label>
+          <input type="password" class="formInputSignUp" placeholder="Contraseña">
+        </div>
+        <div class="formGroupSignUp">
+          <button class="buttonSignUp">Registrate</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+</main>
+
+{% endblock %}
